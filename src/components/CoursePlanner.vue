@@ -7,7 +7,7 @@
         <v-col cols="12">
           <v-card class="ma-3">
             <v-card-title>
-              Courses
+              Courses Selected: {{selected.length}}
               <v-spacer></v-spacer>
               <v-text-field
                 v-model="search"

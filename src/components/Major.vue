@@ -13,7 +13,7 @@
       <v-list-item-group multiple v-for="(item, i) in requirement.core" :key="i">
         <v-list-item>
           <v-list-item-action>
-            <v-checkbox :input-value="selected.includes(item)" color="primary"></v-checkbox>
+            <v-checkbox :input-value="selected.includes(item)" color="primary" readonly></v-checkbox>
           </v-list-item-action>
 
           <v-list-item-content>
@@ -28,7 +28,7 @@
       <v-list-item-group multiple v-for="(item, i) in requirement.optional" :key="i">
         <v-list-item>
           <v-list-item-action>
-            <v-checkbox :input-value="selected.includes(item)" color="primary"></v-checkbox>
+            <v-checkbox :input-value="selected.includes(item)" color="primary" readonly></v-checkbox>
           </v-list-item-action>
 
           <v-list-item-content>
@@ -42,17 +42,18 @@
       <v-subheader>Summary</v-subheader>
       <v-list-item-group multiple>
         <v-list-item>
-          <v-checkbox :input-value="requirement.coreRequired <= numCore" color="primary"></v-checkbox>
+          <v-checkbox :input-value="requirement.coreRequired <= numCore" color="primary" readonly></v-checkbox>
           <v-list-item-content>Core: required {{requirement.coreRequired}}, get {{numCore}}</v-list-item-content>
         </v-list-item>
         <v-list-item>
-          <v-checkbox :input-value="requirement.optionalRequired <= numOption" color="primary"></v-checkbox>
+          <v-checkbox :input-value="requirement.optionalRequired <= numOption" color="primary" readonly></v-checkbox>
           <v-list-item-content>Optional: required {{requirement.optionalRequired}}, get {{numOption}}</v-list-item-content>
         </v-list-item>
         <v-list-item>
           <v-checkbox
             :input-value="requirement.totalRequired <= (numOption + numCore)"
             color="primary"
+            readonly
           ></v-checkbox>
           <v-list-item-content>Total: required {{requirement.totalRequired}}, get {{numOption + numCore}}</v-list-item-content>
         </v-list-item>
